@@ -6,7 +6,7 @@
 
     <groupId>tech.lerk.meshtalk</groupId>
     <artifactId>core</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <description>
         MeshTalk Core Library.
