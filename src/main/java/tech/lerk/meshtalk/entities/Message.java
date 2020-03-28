@@ -3,7 +3,7 @@ package tech.lerk.meshtalk.entities;
 import java.sql.Time;
 import java.util.UUID;
 
-public class Message implements Comparable<Message> {
+public class Message implements Sendable<Message> {
     private UUID id;
     private UUID chat;
     private UUID sender;
