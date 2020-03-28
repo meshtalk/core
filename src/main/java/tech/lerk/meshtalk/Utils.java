@@ -17,7 +17,7 @@ public class Utils {
         return new GsonBuilder()
                 .registerTypeAdapter(PrivateKey.class, new PrivateKeyTypeAdapter())
                 .registerTypeAdapter(PublicKey.class, new PublicKeyTypeAdapter())
-                .registerTypeAdapter(Message.class, RuntimeTypeAdapterFactory.of(Sendable.class, "type")
+                .registerTypeAdapterFactory(RuntimeTypeAdapterFactory.of(Sendable.class, "type")
                         .registerSubtype(Message.class, Message.class.getName())
                         .registerSubtype(Chat.Handshake.class, Chat.Handshake.class.getName()))
                 .create();
