@@ -3,11 +3,12 @@ package tech.lerk.meshtalk.entities;
 import java.sql.Time;
 import java.util.UUID;
 
-public abstract class Sendable<I extends Sendable> implements Comparable<I> {
+public class Sendable implements Comparable<Sendable> {
     private UUID id;
     private UUID sender;
     private UUID receiver;
     private Time date;
+    private UUID chat;
 
     public UUID getId() {
         return id;
@@ -41,8 +42,16 @@ public abstract class Sendable<I extends Sendable> implements Comparable<I> {
         this.date = date;
     }
 
+    public UUID getChat() {
+        return chat;
+    }
+
+    public void setChat(UUID chat) {
+        this.chat = chat;
+    }
+
     @Override
-    public int compareTo(I o) {
+    public int compareTo(Sendable o) {
         return getDate().compareTo(o.getDate());
     }
 }

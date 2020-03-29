@@ -64,16 +64,4 @@ public class Chat implements Comparable<Chat> {
     public void setHandshake(HashMap<UUID, Handshake> handshake) {
         this.handshake = handshake;
     }
-
-    public static class Handshake extends Message {
-        private String key;
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-    }
 }

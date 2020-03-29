@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 import tech.lerk.meshtalk.adapters.PrivateKeyTypeAdapter;
 import tech.lerk.meshtalk.adapters.PublicKeyTypeAdapter;
-import tech.lerk.meshtalk.entities.Chat;
+import tech.lerk.meshtalk.entities.Handshake;
 import tech.lerk.meshtalk.entities.Message;
 import tech.lerk.meshtalk.entities.Sendable;
 
@@ -19,7 +19,7 @@ public class Utils {
                 .registerTypeAdapter(PublicKey.class, new PublicKeyTypeAdapter())
                 .registerTypeAdapterFactory(RuntimeTypeAdapterFactory.of(Sendable.class, "type")
                         .registerSubtype(Message.class, Message.class.getName())
-                        .registerSubtype(Chat.Handshake.class, Chat.Handshake.class.getName()))
+                        .registerSubtype(Handshake.class, Handshake.class.getName()))
                 .create();
     }
 }
