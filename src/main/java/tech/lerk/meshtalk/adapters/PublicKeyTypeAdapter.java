@@ -12,7 +12,6 @@ import java.util.Base64;
 
 public class PublicKeyTypeAdapter implements JsonSerializer<PublicKey>, JsonDeserializer<PublicKey> {
     private static final String DATA = "DATA";
-    private static final String TAG = PublicKeyTypeAdapter.class.getCanonicalName();
 
     public PublicKey deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         JsonObject jsonObject = jsonElement.getAsJsonObject();

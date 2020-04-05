@@ -1,13 +1,13 @@
 package tech.lerk.meshtalk.entities;
 
-import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Sendable implements Comparable<Sendable> {
     private UUID id;
     private UUID sender;
     private UUID receiver;
-    private Time date;
+    private LocalDateTime date;
     private UUID chat;
 
     public UUID getId() {
@@ -34,11 +34,11 @@ public class Sendable implements Comparable<Sendable> {
         this.receiver = receiver;
     }
 
-    public Time getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Time date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
