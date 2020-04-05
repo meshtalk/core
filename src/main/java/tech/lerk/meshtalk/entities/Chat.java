@@ -10,7 +10,7 @@ public class Chat implements Comparable<Chat> {
     private UUID recipient;
     private UUID sender;
     private Set<UUID> messages;
-    private HashMap<UUID, Handshake> handshake;
+    private HashMap<UUID, Handshake> handshakes;
 
     public UUID getId() {
         return id;
@@ -57,11 +57,11 @@ public class Chat implements Comparable<Chat> {
         this.sender = sender;
     }
 
-    public HashMap<UUID, Handshake> getHandshake() {
-        return handshake;
+    public HashMap<UUID, Handshake> getHandshakes() {
+        return handshakes;
     }
 
-    public void setHandshake(HashMap<UUID, Handshake> handshake) {
-        this.handshake = handshake;
+    public void setHandshakes(HashMap<UUID, Handshake> handshakes) {
+        this.handshakes = handshakes;
     }
 }
