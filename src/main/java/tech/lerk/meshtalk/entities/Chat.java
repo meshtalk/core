@@ -1,7 +1,6 @@
 package tech.lerk.meshtalk.entities;
 
 import java.util.HashMap;
-import java.util.Set;
 import java.util.UUID;
 
 public class Chat implements Comparable<Chat> {
@@ -9,8 +8,6 @@ public class Chat implements Comparable<Chat> {
     private String title;
     private UUID recipient;
     private UUID sender;
-    private Set<UUID> messages;
-    private HashMap<UUID, Handshake> handshakes;
 
     public UUID getId() {
         return id;
@@ -36,14 +33,6 @@ public class Chat implements Comparable<Chat> {
         this.recipient = recipient;
     }
 
-    public Set<UUID> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(Set<UUID> messages) {
-        this.messages = messages;
-    }
-
     @Override
     public int compareTo(Chat o) {
         return getId().compareTo(o.getId());
@@ -55,13 +44,5 @@ public class Chat implements Comparable<Chat> {
 
     public void setSender(UUID sender) {
         this.sender = sender;
-    }
-
-    public HashMap<UUID, Handshake> getHandshakes() {
-        return handshakes;
-    }
-
-    public void setHandshakes(HashMap<UUID, Handshake> handshakes) {
-        this.handshakes = handshakes;
     }
 }
