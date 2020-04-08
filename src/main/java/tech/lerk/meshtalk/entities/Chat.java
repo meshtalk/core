@@ -1,6 +1,5 @@
 package tech.lerk.meshtalk.entities;
 
-import java.util.HashMap;
 import java.util.UUID;
 
 public class Chat implements Comparable<Chat> {
@@ -8,6 +7,7 @@ public class Chat implements Comparable<Chat> {
     private String title;
     private UUID recipient;
     private UUID sender;
+    private UUID handshake;
 
     public UUID getId() {
         return id;
