@@ -16,13 +16,16 @@ public class LocalDateTimeTypeAdapter implements JsonSerializer<LocalDateTime>, 
     @Override
     public LocalDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         JsonObject jsonObject = jsonElement.getAsJsonObject();
-        Integer year = jsonDeserializationContext.deserialize(jsonObject.get(YEAR), Integer.class);
-        Integer month = jsonDeserializationContext.deserialize(jsonObject.get(MONTH), Integer.class);
-        Integer day = jsonDeserializationContext.deserialize(jsonObject.get(DAY), Integer.class);
-        Integer hour = jsonDeserializationContext.deserialize(jsonObject.get(HOUR), Integer.class);
-        Integer minute = jsonDeserializationContext.deserialize(jsonObject.get(MINUTE), Integer.class);
-        Integer second = jsonDeserializationContext.deserialize(jsonObject.get(SECOND), Integer.class);
-        return LocalDateTime.of(year, month, day, hour, minute, second);
+        return LocalDateTime.of(deserializeInt(jsonDeserializationContext, jsonObject, YEAR),
+                deserializeInt(jsonDeserializationContext, jsonObject, MONTH),
+                deserializeInt(jsonDeserializationContext, jsonObject, DAY),
+                deserializeInt(jsonDeserializationContext, jsonObject, HOUR),
+                deserializeInt(jsonDeserializationContext, jsonObject, MINUTE),
+                deserializeInt(jsonDeserializationContext, jsonObject, SECOND));
+    }
+
+    private Integer deserializeInt(JsonDeserializationContext jsonDeserializationContext, JsonObject jsonObject, String year) {
+        return jsonDeserializationContext.deserialize(jsonObject.get(year), Integer.class);
     }
 
     @Override
