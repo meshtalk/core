@@ -45,4 +45,12 @@ public class Chat implements Comparable<Chat> {
     public void setSender(UUID sender) {
         this.sender = sender;
     }
+
+    public UUID getHandshake() {
+        return handshake;
+    }
+
+    public void setHandshake(UUID handshake) {
+        this.handshake = handshake;
+    }
 }

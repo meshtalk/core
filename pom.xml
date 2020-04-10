@@ -6,7 +6,7 @@
 
     <groupId>tech.lerk.meshtalk</groupId>
     <artifactId>meshtalk-core</artifactId>
-    <version>2.3.2-SNAPSHOT</version>
+    <version>2.3.2</version>
 
     <name>meshtalk-core</name>
 
@@ -23,7 +23,7 @@
     </licenses>
 
     <scm>
-        <url>https://git.forgetthis.link/meshtalk/core</url>
+        <url>https://github.com/meshtalk/core</url>
     </scm>
 
     <distributionManagement>
